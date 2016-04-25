@@ -10,7 +10,7 @@ func TestModifyPath(t *testing.T) {
 	backupPath := os.Getenv("PATH")
 	defer os.Setenv("PATH", backupPath)
 
-	newPath := "/tmp/hooker_test/:" + backupPath
+	newPath := "/tmp/hooker_test:" + backupPath
 
 	os.Setenv("PATH", newPath)
 

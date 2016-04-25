@@ -11,6 +11,7 @@ import (
 
 func main() {
 
+	os.Setenv("HOOKER_DEBUG", "true")
 	initLog()
 	argsWithProg := os.Args
 
@@ -66,7 +67,7 @@ func execute(executable string, arguments ...string) {
 }
 
 func modifyPath(currentExecutable string) {
-	wrapperHomePath, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+	wrapperHomePath, _ := filepath.Abs(filepath.Dir(currentExecutable))
 
 	path := os.Getenv("PATH")
 	debugf("Path before : %s", path)
